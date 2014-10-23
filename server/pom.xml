@@ -17,10 +17,5 @@
             <artifactId>storeableshell</artifactId>
             <version>1.0</version>
         </dependency>
-        <dependency>
-            <groupId>ru.fizteh.java2.podorozhnya</groupId>
-            <artifactId>shell-api</artifactId>
-            <version>1.0</version>
-        </dependency>
     </dependencies>
 </project>
