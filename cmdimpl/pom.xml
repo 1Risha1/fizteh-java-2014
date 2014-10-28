@@ -15,7 +15,7 @@
         <dependency>
             <groupId>ru.fizteh.java2.podorozhnya</groupId>
             <artifactId>shell-api</artifactId>
-            <version>1.0</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

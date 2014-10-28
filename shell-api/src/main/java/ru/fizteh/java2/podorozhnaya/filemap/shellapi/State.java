@@ -15,8 +15,6 @@ public interface State {
 
     void setCurrentDir(File currentDir) throws IOException;
 
-    void checkAndExecute(String[] args) throws IOException;
-
     File getFileByName(String path);
 
     int commitDif() throws IOException;

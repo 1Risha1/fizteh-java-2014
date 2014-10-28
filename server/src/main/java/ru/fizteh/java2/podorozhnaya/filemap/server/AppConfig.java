@@ -26,10 +26,10 @@ public class AppConfig {
         return new PropertySourcesPlaceholderConfigurer();
     }
 
+
     public static void main(String[] args) {
-        ApplicationContext context = SpringApplication.run(AppConfig.class, args);
-        State st = context.getBean(StoreableState.class);
-        int status = ShellImpl.start(args, st);
+        int status = SpringApplication.run(AppConfig.class, args)
+                .getBean(ShellImpl.class).start(args);
         System.exit(status);
     }
 

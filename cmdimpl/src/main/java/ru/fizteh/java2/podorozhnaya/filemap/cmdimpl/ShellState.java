@@ -14,24 +14,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class ShellState implements State {
+public abstract class ShellState implements State {
 
     private InputStream in;
-    private  PrintStream out;
-
-    @Autowired
-    private Map<String, Command> commands;
-
+    private PrintStream out;
     private File currentDir;
 
     @Value("${ru.fizteh.java2.podorozhnaya.filemap.db.dir:D:/dir}")
     protected String path;
 
-
     public ShellState() throws IOException {
         this.in = System.in;
         this.out = System.out;
-        commands = new HashMap<String, Command>();
     }
 
     @PostConstruct
@@ -69,30 +63,13 @@ public class ShellState implements State {
         this.currentDir = currentDir;
     }
 
-    public void checkAndExecute(String[] args) throws IOException {
-        Command c = commands.get(args[0]);
-        if (c != null) {
-            int argsNumber = c.getNumberOfArguments();
-            if (argsNumber >= 0) {
-                if (argsNumber > args.length - 1) {
-                    throw new IOException(args[0] + ": Too few arguments");
-                } else if (argsNumber < args.length - 1) {
-                    throw new IOException(args[0] + ": Too many arguments");
-                }
-            }
-            c.execute(args);
-        } else {
-            throw new IOException(args[0] + ": No such command");
-        }
-    }
-
     @Override
     public File getFileByName(String path) {
         File f = new File(path);
         if (f.isAbsolute()) {
             return f;
         } else {
-            return new File(this.getCurrentDir(), path);
+            return new File(currentDir, path);
         }
     }
 

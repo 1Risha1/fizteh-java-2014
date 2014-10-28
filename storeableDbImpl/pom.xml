@@ -15,12 +15,12 @@
         <dependency>
             <groupId>ru.fizteh.java2.podorozhnya</groupId>
             <artifactId>storeableDb</artifactId>
-            <version>1.0</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>ru.fizteh.java2.podorozhnya</groupId>
             <artifactId>utils</artifactId>
-            <version>1.0</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

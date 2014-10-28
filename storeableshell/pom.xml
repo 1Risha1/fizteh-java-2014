@@ -16,12 +16,12 @@
         <dependency>
             <groupId>ru.fizteh.java2.podorozhnya</groupId>
             <artifactId>cmdimpl</artifactId>
-            <version>1.0</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>ru.fizteh.java2.podorozhnya</groupId>
             <artifactId>storeableDbImpl</artifactId>
-            <version>1.0</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>
